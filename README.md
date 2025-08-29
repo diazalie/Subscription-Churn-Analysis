@@ -1,60 +1,98 @@
-# Subscription Churn Analysis: Understanding Cancellation Trends for Retention Strategy
+# 📊 Subscription Cancelation Analysis
 
-## Executive Summary  
-The company is experiencing a significant churn issue, leading to major revenue loss. Leadership has launched a company-wide retention effort but lacks insights into why customers are canceling their subscriptions. This analysis leverages user-reported cancellation reasons to identify trends, understand pain points, and provide actionable recommendations to improve retention and reduce churn.  
+## Executive Summary
+The company is experiencing a retention crisis: customers are signing up for subscriptions but are increasingly choosing to cancel rather than renew. The CEO and leadership team are alarmed by rising churn and demand a clear explanation before the next board meeting.  
 
-## Business Problem  
-High churn rates have negatively impacted revenue, but the company lacks visibility into the root causes. Without clear insights, retention strategies may not effectively address customer concerns. The analytics team has decided to analyze the user-reported cancellation reasons collected during the cancellation workflow to uncover trends and guide strategic decision-making.  
+This project analyzes cancelation workflow data to uncover why customers are leaving, validate whether the data is complete and reliable, and generate actionable recommendations to improve retention.  
 
-### Key Business Questions  
-- What are the most common reasons customers cancel their subscriptions?  
-- How do cancellation reasons vary over time?  
-- Are there any patterns in user behavior before canceling?  
-- What strategies can be implemented to improve retention?  
+---
 
-## Methodology  
-1. **Exploratory Data Analysis (EDA)**  
-   - Assess data completeness and identify trends in cancellation reasons.  
-   - Explore how users interact with the product before canceling.  
-2. **Product Funnel Analysis**  
-   - Track the cancellation workflow to understand user behavior.  
-   - Identify points where rescue tactics could be introduced.  
-3. **Data Visualization**  
-   - Create bar charts to show the most common cancellation reasons.  
-   - Develop trend lines to analyze cancellation reasons over time.  
-   - Compare canceled users vs. retained users based on product engagement.  
+## Business Problem
+- High churn rate is reducing recurring revenue and worrying leadership.  
+- Customers are required to select at least one reason when canceling, with the option to provide up to two additional reasons.  
+- Key questions:  
+  - Are customers providing meaningful data in these dropdowns?  
+  - What are the most common reasons for cancelation?  
+  - Do primary, secondary, and tertiary reasons differ in patterns?  
+  - How can the company use these insights to increase retention?  
 
-## Skills Used  
-- **SQL**: CTEs, CASE statements, UNION, view creation  
-- **Data Wrangling & Cleaning**: Handling missing values, standardizing cancellation reasons  
-- **Data Visualization**: Trend analysis, bar charts, user engagement comparisons  
-- **Product Analytics**: Identifying user behavior patterns and retention strategies  
-- **Snowflake Data Warehouse**: Querying structured datasets  
-- **Python (if applicable)**: Pandas, Matplotlib, Seaborn for visualization  
+---
 
-## Results & Business Recommendations  
+## Methodology
+1. **Cancelation Flow Review** – Worked with the product manager to understand the workflow and how data is logged.  
+2. **Data Quality Check** – Verified completeness of cancelation reasons (Reason 1 required, Reason 2 and 3 optional).  
+3. **Trend Analysis** – Explored cancelation reasons over time (2022–2024).  
+4. **Breakdown by Reason Level** – Compared most common primary, secondary, and tertiary selections.  
+5. **Visualization** – Built line charts and bar charts to identify trends, relative frequencies, and data coverage.  
 
-### Results  
-- **X% of users selected at least one additional cancellation reason**, but most did not select all available options, suggesting a lack of interest or frustration with the process.  
-- **The top primary cancellation reasons were:**  
-  1. Expensive  
-  2. Not Useful  
-  3. Went to a Competitor  
-- **Cancellation reasons have shifted over time**, with an increasing number of users citing “Went to Competitor” in recent months.  
+---
 
-### Business Recommendations  
-1. **Improve Onboarding and Support**  
-   - Since many users cite "Expensive" and "Not Useful," we should enhance onboarding and provide more guidance early in the subscription. This could help users see the product’s value, making them less price-sensitive.  
+## Skills Demonstrated
+- SQL querying and data cleaning  
+- Funnel and categorical analysis  
+- Data visualization and trend analysis  
+- Business problem framing and stakeholder communication  
 
-2. **Introduce a Discount-Based Retention Offer**  
-   - For cost-conscious users, offer a limited-time discount when they initiate cancellation. This could encourage them to stay rather than cancel.  
+---
 
-3. **Competitive Market Analysis**  
-   - With “Went to Competitor” being a common secondary reason, we should research competitor offerings to ensure we remain competitive in pricing, features, and user experience.  
+## Results & Findings
 
-4. **Enhance the Cancellation Workflow**  
-   - Introduce friction strategically by asking users for feedback in a way that doesn’t increase frustration.  
-   - Implement AI-driven exit surveys that suggest alternative plans or discounts based on user behavior.  
+### Data Completeness
+- Nearly all cancelations included a primary reason.  
+- A significant share also provided secondary and tertiary reasons, suggesting customers are genuinely sharing insights rather than rushing through.  
 
-## Next Steps  
-- **Analyze engagement metrics**: Compare feature usage between ca
+### Cancelation Drivers
+- **Top primary reasons:**  
+  - *Went to a competitor* (most common)  
+  - *Expensive* (second most common)  
+- **Secondary/Tertiary reasons** reinforce these same themes, with added mentions of *Not useful* and *Bad customer service*.  
+- **Consistency across levels** shows the data is reliable and repeatable.  
+
+### Trends Over Time
+- Cancelation reasons have remained consistent from 2022–2024.  
+- Slight increase in **“Expensive”** → suggests rising price sensitivity.  
+- **“Went to a competitor”** dominates → customers still value the category but find better alternatives elsewhere.  
+
+---
+
+## Visualizations
+
+> Replace placeholders below with actual chart image links stored in your repo’s `/images/` folder.  
+
+- Cancelation Reasons Over Time  
+  ![Cancelation Trends](images/cancelation_trends.png)  
+
+- Distribution of Primary, Secondary, Tertiary Reasons  
+  ![Cancelation Breakdown](images/cancelation_breakdown.png)  
+
+- Reason 1 by Category  
+  ![Reason 1](images/cancelation_reason1.png)  
+
+- Reason 2 by Category  
+  ![Reason 2](images/cancelation_reason2.png)  
+
+- Reason 3 by Category  
+  ![Reason 3](images/cancelation_reason3.png)  
+
+---
+
+## Business Recommendations
+1. **Competitive Benchmarking** – Identify why competitors are winning and emphasize differentiators in marketing and product development.  
+2. **Pricing Strategy** – Test alternative pricing models (discounts, loyalty rewards, flexible tiers) to reduce cost-driven churn.  
+3. **Product Stickiness** – Increase perceived usefulness through onboarding improvements, education campaigns, and usage nudges.  
+4. **Customer Support Enhancements** – Address dissatisfaction with proactive service improvements.  
+
+---
+
+## Next Steps
+- Build a **dashboard** to continuously monitor churn reasons.  
+- Enrich cancelation data by integrating **qualitative feedback** from customer support with categorical dropdown data.  
+- Partner with **product and marketing teams** to test retention experiments (pricing pilots, feature adoption campaigns, support SLAs).  
+- Present findings to leadership with projected **revenue impact** of addressing churn drivers.  
+
+---
+
+✨ **Takeaway:** Cancelation analysis clearly shows churn is primarily driven by **competition and pricing**. Addressing these pain points through **better differentiation, pricing experiments, and improved customer experience** will directly reduce churn and protect long-term revenue.  
+
+
+https://app.hex.tech/big-sql-energy/app/Subscription-Cancelation-Analysis-1n9TRT1YHxfCuHCkpxrQyu/latest

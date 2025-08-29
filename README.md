@@ -55,9 +55,7 @@ This project analyzes cancelation workflow data to uncover why customers are lea
 
 ---
 
-## Visualizations
-
-> Replace placeholders below with actual chart image links stored in your repo’s `/images/` folder.  
+## Visualizations (see URL at bottom of document)  
 
 - Cancelation Reasons Over Time  
   ![Cancelation Trends](images/cancelation_trends.png)  
